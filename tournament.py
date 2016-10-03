@@ -8,7 +8,10 @@ import random
 import psycopg2
 
 def connect(database="tournament"):
-    """Connect to the PostgreSQL database.  Returns a database connection."""
+    """Connect to the PostgreSQL database.  
+    
+    Returns: a database connection, a cursor.
+    """
     try:
         db = psycopg2.connect("dbname={}".format(database))
         cursor = db.cursor()
