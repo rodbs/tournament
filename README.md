@@ -60,7 +60,7 @@ tournament.playerStandings()
 
 Run this test:
 ```
-python tournamnet_test.py
+python tournament_test.py
 ``` 
 
 ## Built With
