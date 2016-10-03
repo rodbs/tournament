@@ -4,9 +4,8 @@
 #
 
 from collections import Counter
-import psycopg2
 import random
-
+import psycopg2
 
 def connect():
     """Connect to the PostgreSQL database.  Returns a database connection."""
@@ -92,8 +91,6 @@ def playerStandings():
     losses_rows = cur.fetchall()
     for i in losses_rows:
         losses[i[0]] = int(i[1])
-    # matches = wins.copy()
-    # matches.update(losses)
 
     # use collections.Counter() to sum dictironaries
     matches = dict(Counter(wins) + Counter(losses))
@@ -172,8 +169,8 @@ def swissPairings():
             players_same_wins.remove(player_choice)
 
         # generate pairings of random ids
-        it = iter(players_random)
-        for x, y in zip(it, it):
+        players_iterator = iter(players_random)
+        for x, y in zip(players_iterator, players_iterator):
             result.append((x, players[x], y, players[y]))
 
     return result
