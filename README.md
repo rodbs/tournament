@@ -30,24 +30,24 @@ sudo pip install psycopg2
 
 ### Installing
 
-1. Start the database
+Start the database
 ```
 sudo service potgresql start
 
 ```
-2. Create user 'ubuntu' if it doesn't exit
+Create user 'ubuntu' if it doesn't exit
 ```
 psql 
 create role ubuntu with login password ubuntu
 ```
 
-3. Run the script to generate the database schema
+Run the script to generate the database schema
 ```
 psql -f tournament.sql
 ```
 
-4. Example to test it works:
- ```
+Example to test it works:
+```
 python
 import tournament
 tournament.registerPlayer("Peter")
