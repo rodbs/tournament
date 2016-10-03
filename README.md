@@ -35,13 +35,8 @@ Start the database
 sudo service potgresql start
 
 ```
-Create user 'ubuntu' if it doesn't exit
-```
-psql 
-create role ubuntu with login password ubuntu
-```
 
-Run the script to generate the database schema
+Run the script to generate the database schema adn views
 ```
 psql -f tournament.sql
 ```

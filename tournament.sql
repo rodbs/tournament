@@ -14,10 +14,10 @@
 drop database if exists tournament;
 create database tournament;
 
-grant all privileges on database tournament to ubuntu;
-
-\c tournament ubuntu
+\c tournament 
 
 create table players (id SERIAL primary key, name text);
-
 create table matches (matchId SERIAl, winner integer references players(id), loser  integer references players(id));
+
+create  view v_wins as select winner as id , count(winner) as matches  from matches group by winner;
+create or replace view v_losses as select loser as id , count(loser) as matches from matches group by loser;
