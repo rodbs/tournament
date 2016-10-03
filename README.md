@@ -1,4 +1,4 @@
-# Project Title
+# Swiss pairing game tournament
 
 Tournament is a programn to generate game pairings using the Swiss pairing algorithm.
 
@@ -7,7 +7,7 @@ Tournament is a programn to generate game pairings using the Swiss pairing algor
 Just clone the repository in your local machine
 
 ```
-git clone 
+git clone https://github.com/rodbs/tournament.git
 ```
 
 ### Prerequisities
@@ -38,16 +38,15 @@ sudo service potgresql start
 2. Create user 'ubuntu' if it doesn't exit
 ```
 psql 
-create role ubutu with login password ubuntu
+create role ubuntu with login password ubuntu
 ```
 
-2. Run the script to generate the database schema
+3. Run the script to generate the database schema
 ```
 psql -f tournament.sql
 ```
 
-3. Example to test it works:
-
+4. Example to test it works:
  ```
 python
 import tournament
@@ -59,7 +58,7 @@ tournament.playerStandings()
 
 ## Running the tests
 
-Run the this test:
+Run this test:
 ```
 python tournamnet_test.py
 ``` 
